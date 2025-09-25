@@ -40,7 +40,7 @@ def Project1(n, a, b):
 
 if __name__ == "__main__":
     # Testing for different values of N
-    n_values = [1000, 10000, 100000, 1000000]
+    n_values = [1000, 5000, 10000, 150000, 100000, 150000, 1000000, 1500000, 10000000, 15000000, 100000000, 150000000, 1000000000, 1500000000]
 
     # Loop through each N value to test it
     for n_size in n_values:
