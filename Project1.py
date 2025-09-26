@@ -1,5 +1,5 @@
 import math
-import time # Need this for the square root and timing functions
+import time
 
 """
 Inputs:
@@ -40,28 +40,28 @@ def Project1(n, a, b):
 
 if __name__ == "__main__":
     # Testing for different values of N
-    n_values = [1000, 5000, 10000, 150000, 100000, 150000, 1000000, 1500000, 10000000, 15000000, 100000000, 150000000, 1000000000, 1500000000]
+    # n_values = [1000, 5000, 10000, 150000, 100000, 150000, 1000000, 1500000, 10000000, 15000000, 100000000, 150000000, 1000000000]
+    n_values = [100000, 300000, 1000000, 3000000,10000000, 30000000, 100000000, 300000000, 500000000, 750000000]
 
-    # Loop through each N value to test it
+    experimental_times = []
+    runs_to_average = 50 # Number of times to run for each N
+
     for n_size in n_values:
-        print(f"--- Running for N = {n_size} ---")
-
-        # Creating two lists of size n, filled with some numbers
-        a_data = [2] * n_size
-        b_data = [3] * n_size
-
-        # 1. Record the time before calling the function
-        start_time = time.time()
-
-        # Call the function to do the calculation
-        final_result = Project1(n_size, a_data, b_data)
-
-        # 2. Record the time *after* the function finishes
-        end_time = time.time()
-
-        # 3. Calculate the difference to find the execution time
-        elapsed_time = end_time - start_time
-
-        print(f"The final sum is: {final_result}")
-        # Print the elapsed time, formatted to 6 decimal places for readability
-        print(f"Execution Time: {elapsed_time:.6f} seconds\n")
+        # Use a constant list to make each test as consistent as possible
+        a_data = [1] * n_size
+        b_data = [1] * n_size
+        
+        total_time_for_n = 0
+        print(f"Running for N = {n_size} ({runs_to_average} times)...")
+        
+        # Run the function multiple times and sum the time
+        for _ in range(runs_to_average):
+            start_time = time.perf_counter()
+            Project1(n_size, a_data, b_data)
+            end_time = time.perf_counter()
+            total_time_for_n += (end_time - start_time)
+            
+        # Calculate the average time
+        average_time = total_time_for_n / runs_to_average
+        experimental_times.append(average_time)
+        print(f"-> Average time: {average_time:.8f} seconds")
