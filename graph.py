@@ -2,19 +2,18 @@ import matplotlib.pyplot as plt
 import numpy as np
 from matplotlib.ticker import FuncFormatter
 
-# Updated data from the convex hull analysis
+# Points
 n_values = np.array([
-    1000, 5000, 10000, 50000, 100000, 500000, 1000000
+    1000, 5000, 10000, 50000, 100000, 500000, 1000000, 5000000, 10000000
 ], dtype=np.float64)
 
 experimental_times = np.array([
-    0.003750, 0.017765, 0.040920, 0.171712, 0.353978, 2.156402, 4.435071
+    0.003153, 0.018297, 0.035509, 0.156415, 0.331907, 1.983047, 4.152013, 24.257462, 50.650553
 ])
 
 normalized_theoretical_times = np.array([
-    0.002218, 0.013661, 0.029571, 0.173623, 0.369687, 2.106517, 4.435071
+    0.002171, 0.013369, 0.028938, 0.169894, 0.361775, 2.061451, 4.340618, 24.094520, 50.650553
 ])
-
 
 # Plotting
 plt.style.use('seaborn-v0_8-whitegrid')
@@ -25,7 +24,6 @@ ax.plot(n_values, experimental_times, marker='o', linestyle='-',
         color='royalblue', label='Experimental Time')
 
 # Plot Normalized Theoretical Time
-# Updated the label to reflect the correct O(n log n) complexity
 ax.plot(n_values, normalized_theoretical_times, marker='s', linestyle='--',
         color='crimson', label=r'Theoretical Time ($O(n \log n)$)')
 

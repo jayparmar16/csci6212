@@ -159,7 +159,7 @@ def convex_hull(points):
 # Testing section to log times for different n (using random points)
 if __name__ == "__main__":
     random.seed(42)  # For reproducibility
-    for n in [1000, 5000, 10000, 50000, 100000, 500000, 1000000]:
+    for n in [1000, 5000, 10000, 50000, 100000, 500000, 1000000, 5000000, 10000000]:
         points = [(random.random() * 1000, random.random() * 1000) for _ in range(n)]
         start = time.time()
         hull = convex_hull(points)
