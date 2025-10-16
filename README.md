@@ -30,4 +30,8 @@ The test file test_convex_hull.py includes several cases to verify the algorithm
 
 ### Project 2 Graph Generated via Code:
 
+Log-Log
 ![alt text](convex_hull_complexity_analysis.png)
+
+Normal
+![alt text](convex_hull_complexity_analysis_normal.png)

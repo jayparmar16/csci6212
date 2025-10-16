@@ -28,11 +28,13 @@ ax.plot(n_values, normalized_theoretical_times, marker='s', linestyle='--',
         color='crimson', label=r'Theoretical Time ($O(n \log n)$)')
 
 # Axis Configuration
-ax.set_xscale('log')
-ax.set_yscale('log')
+# ax.set_xscale('log')
+# ax.set_yscale('log')
 ax.set_title('Experimental vs. Theoretical Runtime for Convex Hull', fontsize=16)
-ax.set_xlabel('Input Size (N) - Logarithmic Scale', fontsize=12)
-ax.set_ylabel('Execution Time (seconds) - Logarithmic Scale', fontsize=12)
+# ax.set_xlabel('Input Size (N) - Logarithmic Scale', fontsize=12)
+ax.set_xlabel('Input Size (N)', fontsize=12)
+# ax.set_ylabel('Execution Time (seconds) - Logarithmic Scale', fontsize=12)
+ax.set_ylabel('Execution Time (seconds)', fontsize=12)
 ax.legend(loc='upper left', fontsize=11)
 ax.grid(True, which="both", ls="--", linewidth=0.5)
 
@@ -42,5 +44,5 @@ ax.yaxis.set_major_formatter(FuncFormatter(lambda y, _: f'{y:.4f}'))
 
 
 fig.tight_layout()
-plt.savefig('convex_hull_complexity_analysis.png', dpi=300)
+plt.savefig('convex_hull_complexity_analysis_normal.png', dpi=300)
 print("Plot has been generated and saved as 'convex_hull_complexity_analysis.png'")
